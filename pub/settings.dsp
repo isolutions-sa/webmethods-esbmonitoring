@@ -1,0 +1,118 @@
+<!doctype html>
+<HTML>
+    <HEAD>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+        <LINK REL="stylesheet" TYPE="text/css" HREF="css/statistics.css">
+		
+		 <script type="text/javascript">
+		 function updateValues(){
+			
+			if (document.getElementById('groupByPackageID').value = 'on'){
+				document.getElementById('groupByPackageID').value='true';
+			}
+			
+			if (document.getElementById('monitorOnStartID').value = 'on'){
+				document.getElementById('monitorOnStartID').value='true';
+			}
+
+		 }
+		 
+		 function changeAction(actionVal){
+			document.getElementById('actionParam').value = actionVal;
+		 }
+		 </script>
+    </HEAD>       
+    <BODY   topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" >
+      <TABLE width=100% cellpadding="0" cellspacing="0" >
+         <TR>
+            <TD class="menusectionHeader" colspan="3">Settings</TD>
+         </TR>
+		 		 
+      </TABLE>
+<table class="tableForm" >
+
+							<tbody ><tr>
+								<td colspan="2" class="tableHeader">Settings</td>
+							</tr>
+							
+					%invoke ESBMonitoring.metrics.services.pub:configSettings%
+					%endinvoke%							
+				<form id="saveSettings" action="settings.dsp" method="get" >	
+							<tr>
+								<td colspan="2" >																		
+									<input type="submit" value="%ifvar isStarted equals('true')%Stop%else%Start%endif%" onclick="changeAction('switchProcessor');">
+									<input type="submit" value="Clear Data" onclick="changeAction('clearData');">
+								</td>
+							</tr>
+							<tr class="oddrow" >
+								<td valign="top">
+									<div align="left" title="If checked the monitoring of the services will start automatically when the 'RichStatistic' package is loaded. Otherwise the monitoring must be started manualy.">
+										Start monitoring on Package load
+									</div>
+								</td>
+								<td >		
+									 <input  type="checkbox" %ifvar monitorOnStart equals('true')% checked %endif% name="monitorOnStart" id="monitorOnStartID">
+								</td>
+								
+							</tr>
+							
+							<tr class="evenrow" style="display:none">
+								<td  valign="top">
+									<div  title="If checked the services in the 'Overview' section will be grouped by package. Otherwise the all services will be listed together.">
+										Group Services by Package
+									</div>
+								</td>
+								<td>		
+									 <input type="checkbox" %ifvar groupByPackage equals('true')% checked %endif% name="groupByPackage" id="groupByPackageID">
+									 
+								</td>							
+							</tr>
+							
+							<tr class="oddrow">
+								<td  valign="top">
+									<div align="left" title="Comma separated values with the names of the packages that should be excluded from monitoring.
+Regex is allowed. Eg: WmRoot,WmPublic,WmMonitor.">
+										Exclude packages
+									</div>
+								</td>
+								<td >											 
+									<textarea value="" cols="30 " rows="5" name="excludedPackages">%value excludedPackages%</textarea>
+								</td>								
+							</tr>
+
+							<tr class="evenrow">
+								<td  valign="top">
+									<div align="left" title="Comma separated values with the names of the packages that should be monitored. 
+If a package is not in the 'Exclude' list then it will be by default included. If a package matches both the 'Exclude' and 'Include' list then it will be included. Regex is allowed." >
+										Include packages
+									</div>
+								</td>
+								<td >											 
+									<textarea cols="30 " rows="5" name="includedPackages">%value includedPackages%</textarea>
+								</td>								
+							</tr>
+	
+							<tr>
+								<td colspan="2" >									
+									<input id="actionParam" type="hidden" name="action" value="update">
+									
+									<input type="submit" value="Update" onclick="updateValues();">
+									<input type="submit" value="Restore Default" onclick="changeAction('restore');">
+								</td>
+							</tr>
+							
+							
+														<tr>
+								<td colspan="2" >
+									%value statusMessage%
+								</td>
+							</tr>
+							
+							
+				</form>			
+						</tbody></table>
+    </BODY>
+</HTML>
+  

@@ -1,0 +1,269 @@
+
+th, td, body, input, p, textarea, select
+	{
+	font-family: "Tahoma", "Verdana", "Arial", "Geneva", "Times", "Helvetica";
+	font-size: 11px;
+	}
+
+
+body
+	{
+	padding-left: 4px;
+	padding-top: 4px;
+	color: black;
+	background: #ffffff;
+	border-left: 1px solid #E2E0E4;
+	border-right: 1px solid #736F77;
+	border-top: 1px solid #E2E0E4;
+	}
+
+tbody tr.oddrow:hover, tr.evenrow:hover {
+    background-color: #f90;
+    cursor: pointer;
+}
+
+li a
+	{
+	color: #0D109B;
+	}
+
+li a:hover
+	{
+	color: blue;
+	}
+
+.pagetitle
+	{
+	letter-spacing: 2pt;
+	font-weight: bold;
+	background-color: #000000;
+	color: #FFFFFF;
+	text-align: left;
+	}
+.A { 
+  background-color: #dcc6c6;
+}
+
+.menux
+	{
+	color: #FFFFFF;
+	letter-spacing: 2pt;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 15px;
+	background-color: #08597B;
+	border-bottom: 1px solid #04354A;
+	}
+
+
+.menusectionHeader
+	{
+	color: #FFFFFF;
+	letter-spacing: 2pt;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 15px;
+	background-color: #08597B;
+	border-bottom: 1px solid #04354A;
+	}
+
+.menuitem
+	{
+	background-color: #F0ECDA;
+	color: #897159;
+	cursor: hand;
+	}
+
+
+.menuitem a { color: #633100; }
+.menuitemspan { color: #633100; }
+
+.tableHeader
+	{
+	background-color:  #08597B;
+	color: #FFFFFF;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding-left: 5px;
+	text-align: left;
+  	border-bottom: 1px solid #474747;
+	}
+
+
+.oddrow, .headerrow
+	{
+	background-color: #E0E0C0;
+	}
+
+.evenrow
+	{
+	background-color: #F0F0E0;
+	}
+	
+.darkrow
+	{
+	background-color: #80803e;
+	}	
+
+.oddrow,  .evenrow, .darkrow, .headerrow
+	{
+	text-align: right;
+	padding-left: 5px;
+	}
+
+.row
+	{
+	background-color: #F0F0E0;
+	}	
+
+.noborder
+	{
+	background-color: #E5E4E2;
+	border-left: 1px solid #E2E0E4;
+	border-right: 1px solid #736F77;
+	border-top: 1px solid #E2E0E4;
+	border-bottom: 1px solid #736F77;
+	}
+
+.leftHeading
+	{
+	color: #08597B;
+	font-weight: bold;
+	padding-left: 5px;
+	text-align: right;
+	padding-bottom: 10px;
+	width: 250px;
+	padding-right: 20px;
+	text-align: top;
+	}
+
+.rightContent
+	{
+	color: #000000;
+	padding-left: 5px;
+	text-align: left;
+	padding-bottom: 10px;
+	width: 250px;
+	padding-right: 20px;
+	text-align: top;
+	}
+	
+.seamless{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow-y: hidden;
+	width: 1356px; 
+    height: 480px;
+}
+	
+	#CalendarControlIFrame {
+  display: none;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  height: 250px;
+  width: 250px;
+  z-index: 99;
+}
+
+#CalendarControl {
+  position:absolute;
+  background-color:#FFF;
+  margin:0;
+  padding:0;
+  display:none;
+  z-index: 100;
+}
+
+#CalendarControl table {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 8pt;
+  border-left: 1px solid #336;
+  border-right: 1px solid #336;
+}
+
+#CalendarControl th {
+  font-weight: normal;
+}
+
+#CalendarControl th a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFF;
+  padding: 1px;
+}
+
+#CalendarControl td {
+  text-align: center;
+}
+
+#CalendarControl .header {
+  background-color: #336;
+}
+
+#CalendarControl .weekday {
+  background-color: #DDD;
+  color: #000;
+}
+
+#CalendarControl .weekend {
+  background-color: #FFC;
+  color: #000;
+}
+
+#CalendarControl .current {
+  border: 1px solid #339;
+  background-color: #336;
+  color: #FFF;
+}
+
+#CalendarControl .weekday,
+#CalendarControl .weekend,
+#CalendarControl .current {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #FFF;
+  width: 2em;
+}
+
+#CalendarControl .weekday:hover,
+#CalendarControl .weekend:hover,
+#CalendarControl .current:hover {
+  color: #FFF;
+  background-color: #336;
+  border: 1px solid #999;
+}
+
+#CalendarControl .previous {
+  text-align: left;
+}
+
+#CalendarControl .next {
+  text-align: right;
+}
+
+#CalendarControl .previous,
+#CalendarControl .next {
+  padding: 1px 3px 1px 3px;
+  font-size: 1.4em;
+}
+
+#CalendarControl .previous a,
+#CalendarControl .next a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#CalendarControl .title {
+  text-align: center;
+  font-weight: bold;
+  color: #FFF;
+}
+
+#CalendarControl .empty {
+  background-color: #CCC;
+  border: 1px solid #FFF;
+}
+

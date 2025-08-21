@@ -1,0 +1,202 @@
+<!doctype html>
+  <HTML>
+   <HEAD>
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+      <TITLE>Search Services
+      </TITLE>
+      <LINK REL="stylesheet" TYPE="text/css" HREF="css/statistics.css">
+	<script language="javascript" type="text/javascript" src="monres_CalendarControl.js"></script>
+	<style>
+a { color: inherit; text-decoration: none;}
+
+    </style>
+
+</HEAD>
+
+
+<body>
+
+<br/>
+<div style="display:none"> </div>
+ <TABLE width=100% cellpadding="0" cellspacing="0">
+         <TR>
+            <TD class="menusectionHeader" colspan="3">Services &gt; Search</TD>
+         </TR>
+		 		 
+</TABLE>
+<TABLE>
+	<TR>
+		<TD colspan="2">
+		<UL>	
+		<LI><a href="monres_overview.dsp">Monitoring Home</a>
+		</UL>	
+		</TD>
+	</TR>
+</TABLE>
+
+
+<FORM id="SearchForm" method="POST" ACTION="">
+
+
+<TABLE class="noborder">
+<TR>
+<TD align = "right">Package Name:</TD>
+<TD align = "left">
+<select name="PACKAGENAME">
+	<option value="" selected name="PACKAGENAME"></option>
+	%invoke AcCommon.logging.userInterface:getPkgNames%
+	%loop packages%
+	<option value="%value name%" name="PACKAGENAME">%value name%</option>
+	%end%
+</select>
+</TD>
+<TD align = "right">Service Name:</TD>
+<TD align = "left">
+<input name="SERVICENAME" size="50" type="text">
+</TD>
+</TR>
+<TR>
+<TD align = "right">Server Name:</TD>
+<TD align = "left">
+<select name="SERVERNAME">
+	<option value="" selected></option>
+	%invoke AcCommon.logging.userInterface:getRemoteServersList%
+	%loop Servers%
+	<option value="%value Host%">%value Host%</option>
+	%end%
+</select>
+</TD>
+<TD align = "right">Context ID:</TD>
+<TD align = "left">
+<input name="CONTEXTID" size="50" type="text">
+</TD>
+</TR>
+<TR>
+<TD align = "right">Root Context ID:</TD>
+<TD align = "left">
+<input name="ROOTCONTEXTID" size="50" type="text">
+</TD>
+<TD align = "right">Parent Context ID:</TD>
+<TD align = "left">
+<input name="PARENTCONTEXTID" size="50" type="text">
+</TD>
+</TR>
+<TR>
+<TD align = "right">Current Status:</TD>
+<TD align = "left">
+<select size="3" name="CURRENTSTATUS">
+<option value="" selected></option> 
+ <option value="COMPLETED">Completed</option>
+  <option value="FAILED">Failed</option>
+  </select>
+</TD>
+<TD align = "right">Activity Status:</TD>
+<TD align = "left">
+<select size="3"name = "ACTIVITYSTATUS">
+  <option value="" selected></option>
+  <option value="FORCECOMPLETED">Force Completed</option>
+  <option value="RESUBMITTED">Resubmitted</option>
+ </select>
+</TD>
+</TR>
+<TR>
+<TD align = "right">Source System:</TD>
+<TD align = "left">
+<input name="SOURCESYSTEM" size="50" type="text">
+</TD>
+<TD align = "right">Target System:</TD>
+<TD align = "left">
+<input name="TARGETSYSTEM" size="50" type="text">
+</TD>
+</TR>
+<TR>
+<TD align = "right">Interface Name:</TD>
+<TD align = "left">
+<input name="INTERFACENAME" size="50" type="text">
+</TD>
+<TD align = "right">Group Name:</TD>
+<TD align = "left">
+<input name="GROUPNAME" size="50" type="text">
+</TD>
+</TR>
+<TR>
+<TD align = "right">Transaction ID:</TD>
+<TD align = "left">
+<input name="TRANSACTIONID" size="50" type="text">
+</TD>
+<TD align = "right">Customer ID:</TD>
+<TD align = "left">
+<input name="CUSTOMERID" size="50" type="text">
+</TD>
+</TR>
+<TR>
+<TD align = "right">Transaction Type:</TD>
+<TD align = "left">
+<input name="TRANSACTIONTYPE" size="50" type="text">
+</TD>
+<TD align = "right">Last Resubmitted ID:</TD>
+<TD align = "left">
+<input name="LASTRESUBMITTEDID" size="50" type="text">
+</TD>
+</TR>
+<tr>
+<td align = "right">From Date:</td>
+<td align ="left">
+<input type="Text" id="From_Date" maxlength="25" size="25" name = "STARTTIME"><a href="javascript:NewCal('From_Date','ddmmmyyyy',true,24)"><img src="images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+</td>
+<td align = "right">To Date:</td>
+<td align="left"><input type="Text" id="To_Date" maxlength="25" size="25" name = "ENDTIME"><a href="javascript:NewCal('To_Date','ddmmmyyyy',true,24)"><img src="images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+</td>
+</tr>
+</TABLE>
+<br>
+<TABLE>
+<TR>
+	<td>
+	<input type='button' name='Submit' value='Submit' onclick='SubmitForm();' />
+	</td>
+</TR>
+</TABLE>
+</form>
+
+
+<script type='text/javascript'>
+
+function SubmitForm()
+{
+   
+        document.forms['SearchForm'].action="/AcCommon/monres_searchParam.dsp";
+		document.forms['SearchForm'].method = "POST";
+        document.forms['SearchForm'].target='frame_result1';
+        document.forms['SearchForm'].submit();
+}
+function getDocHeight(doc) {
+    doc = doc || document;
+    // stackoverflow.com/questions/1145850/
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+function setIframeHeight(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument? ifrm.contentDocument: 
+        ifrm.contentWindow.document;
+    ifrm.style.visibility = 'hidden';
+    ifrm.style.height = "10px"; // reset to minimal height ...
+    // IE opt. for bing/msn needs a bit added or scrollbar appears
+    ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+    ifrm.style.visibility = 'visible';
+	ifrm.style.width = "100%";
+	ifrm.style.border = "0";
+}
+</script>
+
+<iframe id = "ifrm" name='frame_result1' onload="setIframeHeight(this.id)"></iframe>
+
+</body>
+</html>

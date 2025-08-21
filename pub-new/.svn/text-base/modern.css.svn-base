@@ -1,0 +1,87 @@
+body {
+	font-size: 12px;
+	font-family: 'Trebuchet MS',sans-serif;
+	width: 500px;
+}
+
+a {
+	color: #233356;
+}
+
+a:hover {
+	color: #DF690A;
+}
+
+a.button {
+	border: 1px solid  #bbbbbb;
+	text-decoration: none;
+	color: black;
+	font-size: 12px;
+	background: #eeeeee;
+	padding: 0px 10px 0px 10px;
+}
+
+a.button:hover {
+	border: 1px solid #233356;
+	background: #CED9EF;
+}
+
+p#breadcrumps {
+	font-size: 10px;
+	background: #eeeeee;
+	border: 1px solid #bbbbbb;
+	padding: 0 4px 0 4px;
+	color: #555555;
+}
+
+p#breadcrumps a {
+	text-decoration: none;
+	color: #555555;
+}
+
+p#breadcrumps a:hover {
+	color: #DF690A;
+}
+
+div#message {
+	border: 3px solid #233356;
+	padding: 5px 10px 5px 10px;
+	background-color: #CED9EF;
+}
+
+p#actions {
+	text-align: right;
+	margin-bottom: 1ex;
+}
+
+table {
+	clear: both;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: 'Trebuchet MS',sans-serif;
+	border: 1px solid #bbbbbb;
+}
+
+th {
+	text-align: left;
+	background-color: #233356;
+	color: white;
+	font-weight: bold;	
+	padding: 3px 6px 3px 6px;
+}
+
+td {
+	padding: 3px 6px 3px 6px;
+}
+
+tr:nth-child(even) {
+	background-color: #EEEEEE;
+}
+
+tr:nth-child(odd) {
+	background-color: #CED9EF;
+}
+
+

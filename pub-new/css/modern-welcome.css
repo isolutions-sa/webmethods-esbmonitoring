@@ -1,0 +1,197 @@
+/* 
+Modern Welcome Page Styling
+Inspired by iSolution design examples
+*/
+
+/* Welcome page specific styles */
+.welcome-hero {
+  background: radial-gradient(
+    148.48% 136.64% at 3.19% 1.57%,
+    #f5e6ff 0%,
+    #e6f0ff 100%
+  );
+  min-height: 400px;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Note: Header styles moved to inline styles in style.dsp due to WebMethods DSP limitations */
+
+.welcome-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(69, 157, 222, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Feature cards */
+.features-section {
+  padding: 60px 40px;
+  background: #f8f9fa;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003ca4, #0068c4, #459dde);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f5e6ff 100%);
+  border-radius: 50%;
+  font-size: 36px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feature-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0068c4;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: gap 0.3s ease;
+}
+
+.feature-link:hover {
+  gap: 12px;
+}
+
+.feature-link::after {
+  content: "→";
+  font-size: 16px;
+}
+
+/* CTA Button styling */
+.cta-button {
+  display: inline-block;
+  background: #0068c4;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 104, 196, 0.3);
+}
+
+.cta-button:hover {
+  background: #003ca4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 104, 196, 0.4);
+}
+
+/* Unused sections removed: stats-section, monitoring-table, status-badge */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

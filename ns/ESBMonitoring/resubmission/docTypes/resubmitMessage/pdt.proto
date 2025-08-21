@@ -1,0 +1,83 @@
+message NBFMonitoring_1_resubmission_docTypes_resubmitMessage {
+optional  service service = 5;
+optional  framework framework = 6;
+optional  error error = 7;
+optional  resubmit resubmit = 8;
+optional  _env _env = 536870910;
+}
+message _env {
+optional  string activation = 1;
+optional  int32 appLastSeqn = 2;
+optional  string appPassword = 3;
+optional  int32 appSeqn = 4;
+optional  string appUserName = 5;
+optional  int32 priority = 6;
+optional  string businessContext = 7;
+repeated  int32 controlLabel = 8;
+optional  string errorsTo = 9;
+optional  string errorRequestsTo = 10;
+optional  string locale = 11;
+optional  int32 maxResults = 12;
+optional  string replyTo = 13;
+optional  int32 runLevel = 14;
+optional  bytes signature = 15;
+optional  string signatureType = 16;
+optional  int32 startResult = 17;
+optional  int32 tag = 18;
+optional  string trackId = 19;
+optional  string transactionId = 20;
+optional  string transformState = 21;
+optional  int32 age = 22;
+optional  string connectionIntegrity = 23;
+optional  string destId = 24;
+optional  int64 enqueueTime = 25;
+optional  string logBroker = 26;
+optional  string logHost = 27;
+optional  string pubDistinguishedName = 28;
+optional  string pubId = 29;
+optional  bytes pubNetAddr = 30;
+optional  int64 pubSeqn = 31;
+repeated  int32 pubLabel = 32;
+optional  int64 recvTime = 33;
+repeated  _env_route route = 34;
+optional  string uuid = 35;
+optional  string status = 36;
+}
+message _env_route {
+optional  string broker = 1;
+optional  int64 recvTime = 2;
+optional  int64 enqueueTime = 3;
+}
+message framework {
+optional  string timeStamp = 1;
+optional  string logType = 2;
+optional  string contextID = 3;
+optional  string parentContextID = 4;
+optional  string rootContextID = 5;
+optional  string serviceName = 6;
+optional  string packageName = 7;
+optional  string serverName = 8;
+}
+message service {
+optional  string sourceSystem = 1;
+optional  string targetSystem = 2;
+optional  string interfaceName = 3;
+optional  string groupName = 4;
+optional  string transactionType = 5;
+optional  string transactionID = 6;
+optional  string customerID = 7;
+optional  bytes payload = 8;
+}
+message error {
+optional  string errorMessage = 1;
+optional  string errorCode = 2;
+optional  string errorLevel = 3;
+}
+message resubmit {
+optional  string lastResubmissionTimestamp = 1;
+optional  string lastResubmittedID = 2;
+optional  string lastResubmittedOnServer = 3;
+optional  string resubmissionCount = 4;
+optional  string action = 5;
+optional  string actionID = 6;
+}

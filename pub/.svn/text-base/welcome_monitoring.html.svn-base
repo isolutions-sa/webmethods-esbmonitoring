@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<title>Americold ESB Framework</title>
+<script language=javascript>
+
+reqHREF = window.location.href;
+if(reqHREF.lastIndexOf("?docId=") != -1)
+	docId = reqHREF.substring(parseInt(reqHREF.lastIndexOf("?docId=") + 7),reqHREF.length);
+</script>	
+
+</head>
+
+<script>
+
+
+<!-- master frameset-->
+document.writeln('<frameset rows="50,*" framespacing="0" spacing="0" border="0" frameborder="0">');
+  document.writeln('<frame name="banner" scrolling="no" target="contents" src="style.html" marginwidth="0" marginheight="0" border="0" noresize>');
+  document.writeln('<frameset cols="205,*" border="0" framespacing="0" spacing="0" frameborder="0">');
+    document.writeln('<frame name="contents" target="main" src="main_monitoring.dsp" scrolling="yes" marginwidth="0" marginheight="0" noresize>');
+
+
+
+reqHREF = window.location.href;
+if(reqHREF.lastIndexOf("?docId=") != -1){
+	docId = reqHREF.substring(parseInt(reqHREF.lastIndexOf("?docId=") + 7),reqHREF.length);
+	document.writeln('<frame name="main" src="ViewDocDetail.dsp?docId=' + docId + '" target="_self" scrolling="auto" marginwidth="0" marginheight="0">');
+}
+else
+	document.writeln('<frame name="main" src="welcome_main.html" target="_self" scrolling="auto" marginwidth="0" marginheight="0">');
+
+
+
+  document.writeln('</frameset>');
+  document.writeln('</frameset>');
+
+
+
+
+
+</script>
+
+
+
+</html>

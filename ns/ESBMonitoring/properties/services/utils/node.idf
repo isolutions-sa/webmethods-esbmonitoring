@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">ESBMonitoring.properties.services.utils</value>
+  <value name="is_public">false</value>
+  <value name="shared">c3RhdGljIFJlYWRlciBnZXRSZWFkZXIoSURhdGFDdXJzb3IgY3Vyc29yLCBTdHJpbmcga2V5KQp7
+CiAgUmVhZGVyIHJlYWRlciA9IG51bGw7CiAgaWYgKGN1cnNvci5maXJzdChrZXkpKQogIHsKICAg
+IE9iamVjdCBvID0gY3Vyc29yLmdldFZhbHVlKCk7CiAgICBpZiAobyA9PSBudWxsKQogICAgewog
+ICAgICByZWFkZXIgPSBuZXcgU3RyaW5nUmVhZGVyKCIiKTsKICAgIH0KICAgIGVsc2UgaWYgKG8g
+aW5zdGFuY2VvZiBCdWZmZXJlZFJlYWRlcikKICAgIHsKICAgICAgcmVhZGVyID0gKEJ1ZmZlcmVk
+UmVhZGVyKW87CiAgICB9CiAgICBlbHNlIGlmIChvIGluc3RhbmNlb2YgUmVhZGVyKQogICAgewog
+ICAgICByZWFkZXIgPSBuZXcgQnVmZmVyZWRSZWFkZXIoKFJlYWRlcilvKTsKICAgIH0KICAgIGVs
+c2UgaWYgKG8gaW5zdGFuY2VvZiBJbnB1dFN0cmVhbSkKICAgIHsKICAgICAgcmVhZGVyID0gbmV3
+IEJ1ZmZlcmVkUmVhZGVyKG5ldyBJbnB1dFN0cmVhbVJlYWRlcigoSW5wdXRTdHJlYW0pbykpOwog
+ICAgfQogICAgZWxzZSBpZiAobyBpbnN0YW5jZW9mIFN0cmluZykKICAgIHsKICAgICAgcmVhZGVy
+ID0gbmV3IEJ1ZmZlcmVkUmVhZGVyKG5ldyBTdHJpbmdSZWFkZXIoKFN0cmluZylvKSk7CiAgICB9
+CiAgICBlbHNlIGlmIChvIGluc3RhbmNlb2YgYnl0ZVtdKQogICAgewogICAgICByZWFkZXIgPSBu
+ZXcgQnVmZmVyZWRSZWFkZXIobmV3IElucHV0U3RyZWFtUmVhZGVyKG5ldyBCeXRlQXJyYXlJbnB1
+dFN0cmVhbSgoYnl0ZVtdKW8pKSk7CiAgICB9CiAgfQogIHJldHVybiByZWFkZXI7Cgp9CgpzdGF0
+aWMgV3JpdGVyIGdldFdyaXRlcihJRGF0YUN1cnNvciBjdXJzb3IsIFN0cmluZyBrZXkpCnsKICBX
+cml0ZXIgd3JpdGVyID0gbmV3IFN0cmluZ1dyaXRlcigpOwogIGlmIChjdXJzb3IuZmlyc3Qoa2V5
+KSkKICB7CiAgICBPYmplY3QgbyA9IGN1cnNvci5nZXRWYWx1ZSgpOwogICAgaWYgKG8gPT0gbnVs
+bCkKICAgIHsKICAgICAgcmV0dXJuIHdyaXRlcjsKICAgIH0KICAgIGVsc2UgaWYgKG8gaW5zdGFu
+Y2VvZiBCdWZmZXJlZFdyaXRlcikKICAgIHsKICAgICAgd3JpdGVyID0gKEJ1ZmZlcmVkV3JpdGVy
+KW87CiAgICB9CiAgICBlbHNlIGlmIChvIGluc3RhbmNlb2YgV3JpdGVyKQogICAgewogICAgICB3
+cml0ZXIgPSBuZXcgQnVmZmVyZWRXcml0ZXIoKFdyaXRlcilvKTsKICAgIH0KICAgIGVsc2UgaWYg
+KG8gaW5zdGFuY2VvZiBPdXRwdXRTdHJlYW0pCiAgICB7CiAgICAgIHdyaXRlciA9IG5ldyBCdWZm
+ZXJlZFdyaXRlcihuZXcgT3V0cHV0U3RyZWFtV3JpdGVyKChPdXRwdXRTdHJlYW0pbykpOwogICAg
+fQogIH0KICByZXR1cm4gd3JpdGVyOwoKfQoJCgk=</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.wm.app.b2b.server.*</value>
+    <value>java.io.*</value>
+    <value>com.wm.lang.ns.NSService</value>
+    <value>java.util.Stack</value>
+    <value>com.wm.lang.ns.*</value>
+    <value>com.wm.util.Base64</value>
+    <value>com.wm.util.coder.IDataBinCoder</value>
+    <value>com.wm.util.coder.XMLCoderWrapper</value>
+  </array>
+</Values>

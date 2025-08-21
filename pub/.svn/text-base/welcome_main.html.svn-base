@@ -1,0 +1,34 @@
+<html>
+
+	<head>
+		<LINK REL="stylesheet" TYPE="text/css" HREF="webMethods.css">
+		<title>Americold ESB Framework</title>
+		<!-- <base target="contents"> -->
+	</head>
+
+	<body bgcolor="#E6E6FA">
+		<br/>
+		<h1 align="center"><font color=#A80000><b>Americold ESB Framework</b></font>
+		</h1>
+		<br><br><br>
+		<table width=100%>
+			<tr><td>&nbsp;&nbsp;&nbsp;</td></tr>
+			<tr>
+				<td><font size=2><center><a target='main' href='metrics_index.dsp'>Metrics</a></center></font></td>
+			</tr>
+			<tr>
+				<td><font size=2><center><a target='main' href='monres.dsp'>Monitoring & Resubmission</a></center></font></td>
+			</tr>
+			<tr>
+				<td><font size=2><center><a target='main' href='propfile_fileList.dsp'>Properties File Management</a></center></font></td>
+			</tr>
+			<!-- tr>
+				<td><font size=2><center><a target='main' href='emailNotification.dsp?mode=edit&fileName=/opt/softwareag/IntegrationServer/instances/default/packages/AcCommon/config/AcCommon.xml&pkg=AcCommon&file=/opt/softwareag/IntegrationServer/instances/default/packages/AcCommon/config/AcCommon.xml'>Email Notification Parameters</a></center></font></td>
+			</tr -->
+			<tr>
+				<td><font size=2><center><a target='main' href='outboundPasswordManagment.dsp'>Outbound Password Management</a></center></font></td>
+			</tr>	
+
+		</table>
+	</body>
+</html>

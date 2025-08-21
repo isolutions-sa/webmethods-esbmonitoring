@@ -1,0 +1,471 @@
+/*
+Responsive Design Enhancements for ESB Monitoring
+Mobile-first approach with progressive enhancement
+*/
+
+/* Base Mobile Styles (320px+) */
+@media (max-width: 479px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+  
+  .sidebar-area {
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 50px);
+    z-index: 1001;
+    transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sidebar-area.active {
+    left: 0;
+  }
+  
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+  }
+  
+  .mobile-overlay.active {
+    display: block;
+  }
+  
+  /* Typography adjustments */
+  .product-sans-bold-32 { font-size: 20px; }
+  .product-sans-bold-20 { font-size: 16px; }
+  .product-sans-bold-18 { font-size: 15px; }
+  .product-sans-bold-16 { font-size: 14px; }
+  
+  /* Table responsiveness */
+  .table {
+    font-size: 12px;
+  }
+  
+  .table thead th,
+  .table tbody td {
+    padding: 8px 4px;
+  }
+  
+  /* Card adjustments */
+  .card {
+    margin: 8px 0;
+  }
+  
+  .card-header,
+  .card-body {
+    padding: 12px;
+  }
+  
+  /* Button adjustments */
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .btn-small {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  /* Grid system mobile */
+  .grid {
+    gap: 8px;
+  }
+  
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Navigation mobile */
+  .nav-item {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .nav-section-title {
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+}
+
+/* Small Mobile (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .grid {
+    gap: 12px;
+  }
+  
+  .btn {
+    width: auto;
+    display: inline-flex;
+    margin-right: 8px;
+  }
+  
+  .card {
+    margin: 12px 0;
+  }
+}
+
+/* Tablet Portrait (768px - 849px) */
+@media (min-width: 768px) and (max-width: 849px) {
+  .main-container {
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .sidebar-area {
+    position: relative;
+    left: 0;
+    width: 200px;
+    box-shadow: none;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+  }
+  
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .nav-section-title {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large Tablet/Small Desktop (850px - 1199px) */
+@media (min-width: 850px) and (max-width: 1199px) {
+  .main-container {
+    grid-template-columns: 220px 1fr;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .main-container {
+    grid-template-columns: 250px 1fr;
+  }
+  
+  .container {
+    max-width: 1400px;
+    padding: 0 24px;
+  }
+  
+  .grid {
+    gap: 20px;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Touch Device Enhancements */
+@media (hover: none) and (pointer: coarse) {
+  .nav-item {
+    padding: 14px 20px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    min-height: 44px;
+    padding: 12px 20px;
+  }
+  
+  .btn-small {
+    min-height: 36px;
+    padding: 8px 16px;
+  }
+  
+  .table tbody td {
+    padding: 12px 8px;
+  }
+  
+  .card-header,
+  .card-body {
+    padding: 16px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .table {
+    border-width: 0.5px;
+  }
+  
+  .card {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-item {
+    border-left-width: 2px;
+  }
+}
+
+/* Dark Mode Support (User Preference) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --isolution-white: #1a1a1a;
+    --isolution-soft-blue: #2d3748;
+    --isolution-dark-gray: #e2e8f0;
+  }
+  
+  .card {
+    background-color: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .table thead {
+    background-color: #4a5568;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #2d3748;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-area {
+    transition: none;
+  }
+  
+  .loading-overlay {
+    transition: none;
+  }
+  
+  .loading-spinner {
+    animation: none;
+    border-top-color: var(--isolution-dark-blue);
+  }
+  
+  .transition {
+    transition: none;
+  }
+  
+  .btn {
+    transition: none;
+  }
+  
+  .nav-item {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .sidebar-area,
+  .mobile-menu-btn,
+  .loading-overlay,
+  .error-state {
+    display: none !important;
+  }
+  
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+  
+  .header-area {
+    background: white !important;
+    color: black !important;
+    box-shadow: none;
+    border-bottom: 1px solid #000;
+  }
+  
+  .main-area {
+    background: white !important;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #000;
+    break-inside: avoid;
+  }
+  
+  .table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .btn {
+    display: none;
+  }
+  
+  .nav-item {
+    color: #000 !important;
+  }
+  
+  /* Ensure links are visible */
+  .links-item {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  
+  .links-item:after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+  }
+}
+
+/* Accessibility Enhancements */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+/* Focus indicators */
+.nav-item:focus,
+.btn:focus,
+.links-item:focus {
+  outline: 2px solid var(--isolution-dark-blue);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--isolution-dark-blue);
+  color: var(--isolution-white);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1002;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--isolution-dark-blue);
+  }
+  
+  .btn-primary {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .btn-secondary {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+  }
+  
+  .nav-item:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+/* Animation for mobile menu */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.sidebar-area.animate-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.sidebar-area.animate-out {
+  animation: slideOut 0.3s ease-in;
+}
+
+/* Utility classes for responsive design */
+.mobile-only {
+  display: block;
+}
+
+.tablet-up {
+  display: none;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+  
+  .tablet-up {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .desktop-only {
+    display: block;
+  }
+}

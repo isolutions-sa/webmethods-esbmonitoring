@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<title>Americold ESB Monitoring</title>
+		<LINK REL="stylesheet" TYPE="text/css" HREF="webMethods.css">
+		<script src="menu.js.txt"></script>
+		<style>
+		body {     border-top: 1px solid #97A6CB; }
+		</style>
+
+
+	<SCRIPT language=Javascript>
+	<!-- Hide script from old browsers
+		document.WM = new Object();
+		document.WM.hirelist = new Object();
+		document.WM.hirelist.expandos = new Array();
+		document.WM.hirelist.heights = new Array();
+		document.WM.hirelist.names = new Array();
+
+		function WM_toggle(id) {
+ 			if (document.all){
+		    		if(document.all[id].style.display == 'none'){
+		      			document.all[id].style.display = '';
+		    	} else {
+		      		document.all[id].style.display = 'none';
+ 		   	}	
+ 		 	} else if (document.getElementById){
+ 		   		if(document.getElementById(id).style.display == 'none'){
+ 		     			document.getElementById(id).style.display = 'block';
+ 		   		} else {
+  		    			document.getElementById(id).style.display = 'none';
+  		  		}
+  			} else if(document.layers) {
+  		    		if(parseInt(id + 1)){
+			  		ditem = id + 1;
+  		    		} else {
+			  		ditem = document.WM.hirelist.names[id];
+   		   		}
+   		   		if(document.WM.hirelist.expandos[ditem].clip.bottom == 0) {
+			     		document.WM.hirelist.expandos[ditem].clip.bottom = document.WM.hirelist.heights[ditem];
+  		    		} else {
+			  		document.WM.hirelist.expandos[ditem].clip.bottom = 0;
+   		   		}
+   		   		WM_align();
+  			}
+		}
+
+		function WM_align() {
+ 			var i,j,stupid_netscape_array_infinate_loop_error;
+ 		   	stupid_netscape_array_infinate_loop_error = document.WM.hirelist.expandos.length;
+ 		   	for(i=0; i<stupid_netscape_array_infinate_loop_error; i++) {
+				j = i + 1;
+				if(document.WM.hirelist.expandos[j]){
+			    		if(document.layers) {
+						document.WM.hirelist.expandos[j].top = document.WM.hirelist.expandos[i].top + document.WM.hirelist.expandos[i].clip.bottom;
+			   		}
+				}
+  		  	}
+		}
+
+		function WM_initialize_toolbar(){
+		   	if(document.layers) {
+				for(i=0; i<document.layers['container'].document.layers.length; i++){
+				    	document.WM.hirelist.expandos[i] = document.layers['container'].document.layers[i];
+				    	document.WM.hirelist.names[document.layers['container'].document.layers[i].name] = i;
+				    	document.WM.hirelist.heights[i] = document.WM.hirelist.expandos[i].clip.bottom;
+				}
+				for (p=0;p<document.WM.hirelist.expandos.length;p=p+2){
+				    	WM_toggle(p);
+				}
+				document.layers['container'].visibility = 'visible';
+   			 } else if (document.all){
+				for(i = 0; i < document.all('container').all.length; i++){
+					document.all('container').all[i].style.position = 'relative';
+					if(document.all('container').all[i].className == 'menulist'){
+						document.all('container').all[i].style.display = 'none';
+					}
+				}
+				document.all('container').style.visibility = 'visible';
+    			} else if (document.getElementsByTagName && document.getElementById){
+				var contained = document.getElementById('container').getElementsByTagName('div');
+				for(i = 0; i < contained.length; i++){
+			  		contained[i].style.position = 'relative';
+			  		if(contained[i].getAttribute('class') == 'menulist'){
+						contained[i].style.display = 'none';
+					}
+				}
+				document.getElementById('container').style.visibility = 'visible';
+   			}
+		}
+
+		function WM_imageToggle(daImage, src1, src2, netscape_container){
+  			var objStr,obj;
+  				// Check to make sure that images are supported in the DOM.
+	
+	  		myImage = document.images[daImage];
+  			if(document.layers){
+      				myImage = document.layers['container'].document.layers[netscape_container].document.images[daImage];
+  			}
+  			if(document.images){
+   			 		// Check to see whether you are using a name, number, or object
+
+
+			if(myImage.alt == src1){
+				myImage.src=src2;
+				myImage.alt=src2;
+			}
+			else {
+				myImage.src=src1;
+				myImage.alt=src1;;
+			}
+
+
+
+			}
+		}
+	// -->
+	</SCRIPT>
+
+
+	</head>
+
+	
+
+
+		<P>
+		%invoke AcCommon.logging.userInterface:monitoringPageFlow%
+
+
+&nbsp;&nbsp;<DIV id=container style="VISIBILITY: hidden; WIDTH: 175px;">
+	<div id=mainheader class="menusection-Server">
+		<img src="images/blank.gif" width="4" height="1" border="0">ESB Americold Monitoring
+	</div>	
+%invoke AcCommon.logging.userInterface:getUserRights%
+
+	<div id=headerone class="menuitem">
+		<img src="images/blank.gif" width="4" height="1" border=0><A href="welcome_monitoring.html" target=main>Welcome</a>&nbsp;&nbsp;%value username%
+		
+	</div>
+
+%ifvar WriteRights equals('true')%
+	<div id=headerseven class="menuitem">
+		<img src="images/blank.gif" width="4" height="1" border="0"><A href="allServices.dsp" target=main>Services</A>
+	</div>
+	
+%endif%
+
+	<div id=headernine class="menuitem">
+		<img src="images/blank.gif" width="4" height="1" border="0">
+	</div>
+
+	<div id=headerten class="menuitem">
+		<img src="images/blank.gif" width="4" height="1" border="0"><A href="changePass.dsp?username=%value username%" target=main>Change Password</A>
+	</div>
+
+%endinvoke%
+</DIV>
+
+<br>
+
+			<!-- error handling -->
+			%onerror%
+			<HR>
+			<tr><td>
+				<P>The Server could not process your request because the following error occurred. Contact your server
+administrator.
+				</P>
+				<TABLE WIDTH="100%" BORDER="1">
+					<TR>
+						<TD>Service</TD>
+						<TD>%value errorService%</TD>
+					</TR>
+					<TR>
+						<TD>Error</TD>
+						<TD>%value error% &nbsp; <br>%value errorMessage%</TD>
+					</TR>
+					<!-- <TR><TD><B>Error Inputs</B></TD><TD>%value errorInputs% &nbsp;  </TD></TR> <TR><TD><B>Error Outputs</B></TD><TD>%value errorOutputs% &nbsp; </TD></TR> -->
+				</TABLE>
+			</td></tr>
+
+		%endinvoke%
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+
+<head>
+	<title>Americold ESB Framework</title>
+<script language=javascript>
+
+reqHREF = window.location.href;
+if(reqHREF.lastIndexOf("?docId=") != -1)
+	docId = reqHREF.substring(parseInt(reqHREF.lastIndexOf("?docId=") + 7),reqHREF.length);
+</script>
+
+</head>
+
+<script>
+
+
+<!-- master frameset-->
+  document.writeln('<frameset cols="10%,*" border="0" framespacing="0" spacing="0" frameborder="0">');
+  document.writeln('<frame name="content" target="body" src="links.html" scrolling="yes" marginwidth="0" marginheight="0" noresize>');
+  document.writeln('<frame name="body" src="monitoring.dsp" target="_self" scrolling="auto" marginwidth="0" marginheight="0">')
+  document.writeln('</frameset>');
+
+</script>
+
+</html>

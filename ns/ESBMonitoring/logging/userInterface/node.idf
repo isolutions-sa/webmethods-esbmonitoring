@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">ESBMonitoring.logging.userInterface</value>
+  <value name="is_public">false</value>
+  <value name="shared"></value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.ByteArrayInputStream</value>
+    <value>javax.xml.transform.OutputKeys</value>
+    <value>javax.xml.transform.Transformer</value>
+    <value>javax.xml.transform.stream.StreamResult</value>
+    <value>org.xml.sax.InputSource</value>
+    <value>java.io.StringWriter</value>
+    <value>javax.xml.transform.TransformerFactory</value>
+    <value>javax.xml.xpath.XPath</value>
+    <value>javax.xml.xpath.XPathConstants</value>
+    <value>javax.xml.xpath.XPathFactory</value>
+    <value>org.w3c.dom.Document</value>
+    <value>javax.xml.parsers.DocumentBuilderFactory</value>
+    <value>org.w3c.dom.*</value>
+    <value>javax.xml.transform.dom.DOMSource</value>
+    <value>java.util.*</value>
+  </array>
+</Values>
