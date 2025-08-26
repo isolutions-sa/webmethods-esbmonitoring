@@ -11,7 +11,7 @@
 <frameset rows="50,*" framespacing="0" border="0" frameborder="0">
 <frame name="banner" scrolling="no" src="monres_top.dsp" marginwidth="0" marginheight="0" noresize>
   <frameset cols="210,*" border="0" framespacing="0" frameborder="0">
-		  <frame name="contents" src="monres_menu.dsp" scrolling="yes" marginwidth="0" marginheight="0" noresize>
+		  <frame name="contents" src="monres_menu.dsp" scrolling="no" marginwidth="0" marginheight="0" noresize>
 		  <frame name="details"  src="monres_overview.dsp" scrolling="auto" marginwidth="0" marginheight="0" noresize>
   </frameset>
   <noframes>

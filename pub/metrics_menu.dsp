@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Menu</title>
+		<link rel="stylesheet" type="text/css" href="css/isolution-design.css">
         <link rel="stylesheet" type="text/css" href="css/statistics.css">
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
         <style>

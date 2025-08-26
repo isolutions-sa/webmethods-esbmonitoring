@@ -12,7 +12,7 @@
 <body class="modern-layout">
     <div style="background: radial-gradient(148.48% 136.64% at 3.19% 1.57%, #f5e6ff 0%, #e6f0ff 100%); height: 50px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
         <div style="display: flex; align-items: center; gap: 14px;">
-            <img src="images/geidea.png" alt="Geidea Logo" style="height: 32px; width: auto;">
+            <img src="images/unifai.png" alt="Unifai Logo" style="height: 32px; width: auto;">
             <div style="height: 32px; width: 1px; background: rgba(51, 51, 51, 0.2);"></div>
             <h1 style="font-family: 'Product Sans', sans-serif; font-weight: 700; font-size: 18px; color: #333; margin: 0; letter-spacing: 0.3px;">ESB Monitoring</h1>
         </div>

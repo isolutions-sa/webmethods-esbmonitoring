@@ -1,0 +1,84 @@
+/* 
+iSolution Design System CSS Framework
+Modern UI for ESB Monitoring - Minimal version due to WebMethods DSP limitations
+*/
+
+/* Typography System - Product Sans (Note: Classes removed, using inline styles due to WebMethods DSP limitations) */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@300;400;700&display=swap');
+
+/* CSS Custom Properties - Design System Colors */
+:root {
+  /* Primary Brand Colors */
+  --isolution-dark-blue: #003ca4;
+  --isolution-mid-blue: #0068c4;
+  --isolution-light-blue: #459dde;
+  
+  /* Status Colors */
+  --isolution-active-status: #009d0d;
+  --isolution-pending-status: #ffb700;
+  --isolution-suspended-status: #c00000;
+  
+  /* UI Colors */
+  --isolution-white: #ffffff;
+  --isolution-soft-blue: #ebf1f7;
+  --isolution-dark-gray: #585858;
+  
+  /* Alert Colors */
+  --isolution-dark-red: #a61433;
+  --isolution-red: #e30417;
+  
+  /* Badge Colors */
+  --color-suspended-badge: #fbe0e3;
+  --color-active-badge: #e0f3e2;
+  
+  /* Gradients */
+  --isolution-blue-gradient: radial-gradient(148.48% 136.64% at 3.19% 1.57%, #e9f0fe 0%, #f2f6fe 100%);
+  --isolution-gradient-2: linear-gradient(var(--isolution-dark-blue), var(--isolution-mid-blue), var(--isolution-light-blue));
+  
+  /* Typography */
+  --primary-font: 'Product Sans', sans-serif;
+}
+
+/* Modern Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--isolution-dark-gray);
+  background: var(--isolution-white);
+}
+
+/* Legacy Compatibility - Gradual Migration */
+.modern-layout {
+  font-family: 'Product Sans', sans-serif;
+}
+
+/* Override old styles progressively */
+.modern-layout .menuitem,
+.modern-layout .menulist {
+  background-color: transparent;
+  color: var(--isolution-dark-gray);
+}
+
+.modern-layout .menusection-Server {
+  background: var(--isolution-gradient-2);
+  color: var(--isolution-white);
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.test-class{
+	color: orange;
+}
+/*
+Note: All utility classes, component systems, and layout classes have been removed
+due to WebMethods DSP limitations that require inline styles for content elements.
+Only CSS custom properties (variables) and basic compatibility styles remain.
+*/
