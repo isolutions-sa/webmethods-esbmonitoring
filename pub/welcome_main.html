@@ -1,36 +1,174 @@
+<!DOCTYPE html>
 <html>
-
-	<head>
-		<LINK REL="stylesheet" TYPE="text/css" HREF="webMethods.css">
-		<title>UnifAi ESB Framework</title>
-		<!-- <base target="contents"> -->
-	</head>
-
-	<body bgcolor="#E6E6FA">
-		<br/>
-		<h1 align="center"><font color=#A80000><b>UnifAi ESB Framework</b></font>
-		</h1>
-		<br><br><br>
-		<table width=100%>
-			<tr><td>&nbsp;&nbsp;&nbsp;</td></tr>
-			<tr>
-				<td><font size=2><center><a target='main' href='metrics_index.dsp'>Metrics</a></center></font></td>
-			</tr>
-			<tr>
-				<td><font size=2><center><a target='main' href='monres.dsp'>Monitoring & Resubmission</a></center></font></td>
-			</tr>
-			<tr>
-				<td><font size=2><center><a target='main' href='propfile_fileList.dsp'>Properties File Management</a></center></font></td>
-			</tr>
-			<!-- tr>
-				<td><font size=2><center><a target='main' href='emailNotification.dsp?mode=edit&fileName=/opt/softwareag/IntegrationServer/instances/default/packages/AcCommon/config/AcCommon.xml&pkg=AcCommon&file=/opt/softwareag/IntegrationServer/instances/default/packages/AcCommon/config/AcCommon.xml'>Email Notification Parameters</a></center></font></td>
-			</tr -->
-			<tr>
-				<td><font size=2><center><a target='main' href='outboundPasswordManagment.dsp'>Outbound Password Management</a></center></font></td>
-			</tr>	
-			<tr>
-				<!-- <td><font size=2><center><a target='main' href='interfaceManagement.dsp'>Interface Management</a></center></font></td> -->
-			</tr>
-		</table>
-	</body>
+<head>
+	<title>UnifAi ESB Framework</title>
+	<link rel="stylesheet" type="text/css" href="css/isolution-design.css">
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@300;400;500;700&display=swap');
+		:root {
+			--primary-font: 'Product Sans', sans-serif;
+			--isolution-dark-blue: #003ca4;
+			--isolution-mid-blue: #0068c4;
+			--isolution-dark-gray: #585858;
+			--isolution-dark-red: #a61433;
+			--isolution-soft-blue: #ebf1f7;
+			--isolution-layout-border: #e2e9ed;
+		}
+		body {
+			background: var(--isolution-soft-blue);
+			margin: 0;
+			font-family: var(--primary-font);
+			color: var(--isolution-dark-gray);
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-smooth: antialiased;
+		}
+		.homepage-hero {
+			max-width: 700px;
+			margin: 20px auto 0 auto;
+			text-align: center;
+		}
+		.homepage-title {
+			font-size: 36px;
+			font-weight: 700;
+			color: var(--isolution-dark-blue);
+			margin-bottom: 12px;
+		}
+		.homepage-subtitle {
+			font-size: 20px;
+			color: var(--isolution-dark-gray);
+			margin-bottom: 32px;
+		}
+		.homepage-desc {
+			font-size: 18px;
+			color: var(--isolution-dark-gray);
+			margin-bottom: 32px;
+		}
+		.homepage-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 32px;
+			max-width: 900px;
+			margin: 0 auto 32px auto;
+			padding: 0 16px;
+		}
+		@media (max-width: 700px) {
+			.homepage-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+		.homepage-card {
+			background: #fff;
+			border-radius: 16px;
+			box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-decoration: none;
+			padding: 32px 18px 24px 18px;
+			border: 1px solid var(--isolution-layout-border);
+			transition: box-shadow 0.2s, border 0.2s;
+		}
+		.homepage-card:hover {
+			box-shadow: 0 8px 24px rgba(0,60,164,0.12);
+			border: 1.5px solid var(--isolution-mid-blue);
+		}
+		.homepage-icon {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 18px;
+		}
+		.homepage-card-title {
+			font-size: 20px;
+			font-weight: 600;
+			color: var(--isolution-dark-blue);
+			margin-bottom: 8px;
+			text-align: center;
+		}
+		.homepage-card-desc {
+			font-size: 15px;
+			color: var(--isolution-dark-gray);
+			text-align: center;
+		}
+		.homepage-footer {
+			max-width: 700px;
+			margin: 0 auto 32px auto;
+			text-align: center;
+		}
+		.homepage-tip {
+			font-size: 14px;
+			color: #888;
+			background: #f7f7f7;
+			border-radius: 8px;
+			padding: 12px 18px;
+			display: inline-block;
+		}
+		@media (max-width: 600px) {
+			.homepage-hero {
+				margin-top: 24px;
+			}
+			.homepage-title {
+				font-size: 24px;
+			}
+			.homepage-desc {
+				font-size: 15px;
+			}
+			.homepage-grid {
+				gap: 18px;
+				padding: 0 4px;
+			}
+			.homepage-card {
+				padding: 18px 8px 14px 8px;
+			}
+			.homepage-card-title {
+				font-size: 16px;
+			}
+			.homepage-card-desc {
+				font-size: 13px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="homepage-hero">
+		<div class="homepage-title">UnifAi ESB Framework</div>
+		<div class="homepage-subtitle">Integration. Monitoring. Management.</div>
+		<div class="homepage-desc">This is your central hub for monitoring transactions, viewing metrics, and managing system properties. Use the quick links below to get started.</div>
+	</div>
+	<div class="homepage-grid">
+		<a class="homepage-card" target="main" href="metrics_index.dsp">
+			<div class="homepage-icon" style="background:#e6f0ff;color:#003ca4;">
+				<svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17v-7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm7 0V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm7 0v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"></path></svg>
+			</div>
+			<div class="homepage-card-title">Metrics</div>
+			<div class="homepage-card-desc">View system metrics and performance statistics.</div>
+		</a>
+		<a class="homepage-card" target="main" href="monres.dsp">
+			<div class="homepage-icon" style="background:#d3f9d8;color:#009d0d;">
+				<svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1-17h2v6h-2V5zm1 8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"></path></svg>
+			</div>
+			<div class="homepage-card-title">Monitoring & Resubmission</div>
+			<div class="homepage-card-desc">Monitor transactions and manage resubmissions.</div>
+		</a>
+		<a class="homepage-card" target="main" href="propfile_fileList.dsp">
+			<div class="homepage-icon" style="background:#fff3cd;color:#ffb700;">
+				<svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h10v2H4z"></path></svg>
+			</div>
+			<div class="homepage-card-title">Properties File Management</div>
+			<div class="homepage-card-desc">Manage configuration and properties files.</div>
+		</a>
+		<a class="homepage-card" target="main" href="outboundPasswordManagment.dsp">
+			<div class="homepage-icon" style="background:#ffeaea;color:#a61433;">
+				<svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6-7V7a6 6 0 0 0-12 0v3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zm-8-3a4 4 0 0 1 8 0v3H6V7z"></path></svg>
+			</div>
+			<div class="homepage-card-title">Outbound Password Management</div>
+			<div class="homepage-card-desc">Securely manage outbound passwords.</div>
+		</a>
+	</div>
+</body>
 </html>
