@@ -95,6 +95,60 @@
 		 .logout{
 			fill: var(--isolution-dark-red);
 		 }
+		 #logoutModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  padding: 32px 24px;
+  max-width: 340px;
+  width: 90vw;
+  margin: auto;
+  text-align: center;
+}
+
+.logout-modal-content h2 {
+  font-family: 'Product Sans', sans-serif;
+  font-size: 20px;
+  color: #003ca4;
+  margin-bottom: 18px;
+}
+
+.logout-modal-content p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.logout-modal-content button {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.logout-modal-content .cancel-btn {
+  background: #003ca4;
+  color: #fff;
+}
+
+.logout-modal-content .confirm-btn {
+  background: #ffeaea;
+  color: #a61433;
+}
 	</style>
 </head>
 <body>
@@ -117,11 +171,13 @@
                 <a href="index.html" target="_parent" class="action" title="Home">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
                 </a>
-                <a href="../WmRoot/top-logoff.dsp" target="_parent" class="action" title="Logout" onclick="return confirm('OK to Log Off?')" >
+				<a href="#" class="action logout-btn" title="Logout" onclick="top.showLogoutModal(); return false;">
                     <svg class="icon logout" viewBox="0 0 24 24"><path d="M16,17V14H9V10H16V7L21,12L16,17M14,2A2,2 0 0,1 16,4V6H14V4H5V20H14V18H16V20A2,2 0 0,1 14,22H5A2,2 0 0,1 3,20V4A2,2 0 0,1 5,2H14Z" /></svg>
                 </a>
             </div>
         </div>
     </div>
+    
+	<!-- Modal and JS removed: now handled in top-level index.html -->
 </body>
 </HTML>
